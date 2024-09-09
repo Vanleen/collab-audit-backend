@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudArrowDown, faUser } from '@fortawesome/free-solid-svg-icons';
-import CollabAuditLogo from '../assets/LogoCollabAudit.svg';
-import './Dashboard.css';
+import React, { useState } from "react";
+import "./Dashboard.css";
+import Navbar from "../components/Navbar";
+import entreprises from "../components/EntrepriseArray";
+import { NavLink } from "react-router-dom";
+import "./EntreprisesCard.css";
+import { CircleAlert } from "lucide-react";
+import Logo from "../assets/LogoCollabAudit.svg";
+import Button from "react-bootstrap/Button";
+import { CircleChevronRight } from "lucide-react";
 
 const CommissaireDashboard = () => {
   const [files, setFiles] = useState([]);
@@ -14,64 +19,54 @@ const CommissaireDashboard = () => {
 
   return (
     <div className="dashboard-container">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="navbar-left">
-          <img src={CollabAuditLogo} alt="CollabAudit Logo" className="navbar-logo" />
-        </div>
-        <div className="navbar-right">
-          <div className="user-info">
-            <span>Nom de l'utilisateur</span>
-            <FontAwesomeIcon icon={faUser} className="user-icon" />
+      <Navbar />
+      <div class="dashboard-containt">
+        <div class="side-bar">
+          <div class="top-side">
+            <img src={Logo} alt="CollabAudit Logo" className="home-logo" />
+            <p>_____________________</p>
+            <p>
+              Choix de la société <CircleChevronRight />
+            </p>
+          </div>
+          <div class="bot-side">
+            <Button className="btnn" variant="success">
+              Nous contacter
+            </Button>
           </div>
         </div>
-      </nav>
+        <div class="entreprise-list">
+          {entreprises.map((entreprise) => {
+            return (
+              <NavLink to={`/dashboard/entreprise/${entreprise.id}`}>
+                <div class="entreprise-card">
+                  <div class="top-card">
+                    <div class="logo-container">
+                      <img
+                        className="logo-entreprise"
+                        src={entreprise.img}
+                        alt={entreprise.nom}
+                      />
+                    </div>
 
-      {/* Sidebar */}
-      <div className="sidebar">
-        <ul className="sidebar-menu">
-          <li>Tableau de bord</li>
-          <li>Mandats</li>
-          <li>Paramètres</li>
-        </ul>
-      </div>
-
-      {/* Main Content */}
-      <div className="main-content">
-        {/* Drag and Drop Zone */}
-        <div className="file-upload">
-          <FontAwesomeIcon icon={faCloudArrowDown} className="upload-icon" />
-          <h2>Déposez vos fichiers ici, ou <span className="upload-link">cliquez ici</span> pour sélectionner</h2>
-          <input type="file" multiple onChange={handleFileUpload} />
-        </div>
-
-        {/* Files Table */}
-        <div className="file-list">
-          <h3>Fichiers téléchargés</h3>
-          <table className="file-table">
-            <thead>
-              <tr>
-                <th>Nom du document</th>
-                <th>État</th>
-                <th>Type</th>
-                <th>Dépôt par</th>
-                <th>Date de dépôt</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {files.map((file, index) => (
-                <tr key={index}>
-                  <td>{file.name}</td>
-                  <td>En cours de traitement</td>
-                  <td>{file.type}</td>
-                  <td>Nom de l'utilisateur</td>
-                  <td>{new Date().toLocaleDateString()}</td>
-                  <td><button className="action-btn">Ouvrir</button></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                    <div class="right-header">
+                      <h2 className="name-entreprise">{entreprise.nom}</h2>
+                      <p className="desc-entreprise">
+                        {entreprise.secteur} / {entreprise.nombreEmployes}{" "}
+                        employés
+                      </p>
+                    </div>
+                  </div>
+                  <div class="bot-card">
+                    <div class="alert-container">
+                      <CircleAlert />
+                      <p className="alert">{entreprise.alert} alerts</p>
+                    </div>
+                  </div>
+                </div>
+              </NavLink>
+            );
+          })}
         </div>
       </div>
     </div>

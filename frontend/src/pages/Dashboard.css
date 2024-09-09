@@ -1,164 +1,173 @@
 /* Global dashboard container */
 .dashboard-container {
-    background-color: #99A7F2; /* Couleur de fond */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-  
-  /* Navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ajout de l'ombre */
-  }
-  
-  .navbar-logo {
-    height: 40px;
-    /* Légèrement réduit la taille du logo */
-  }
-  
-  .navbar-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-  }
-  
-  .username {
-    font-size: 16px;
-  }
-  
-  .user-icon {
-    font-size: 24px;
-  }
-  
-  .user-menu {
-    position: absolute;
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    right: 20px;
-    top: 50px;
-  }
-  
-  .user-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .user-menu ul li {
-    padding: 8px 12px;
-    cursor: pointer;
-  }
-  
-  .user-menu ul li:hover {
-    background-color: #f6b82d;
-  }
-  
-  /* Page layout */
-  .page-layout {
-    display: flex;
-    margin-top: 80px; /* Espace pour la navbar */
-  }
-  
-  /* Sidebar */
-  .sidebar {
-    background-color: white;
-    width: 120px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 150px; /* Ajustement de la position par rapport à la navbar */
-    bottom: 60px;
-  }
-  
-  .sidebar-menu {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar-menu li {
-    padding: 10px 0;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .sidebar-menu li:hover {
-    background-color: #f6b82d; /* Couleur au survol */
-  }
-  
-  /* Content area */
-  .content-area {
-    margin-left: 180px; /* Aligner avec la sidebar */
-    padding: 20px;
-    width: calc(100% - 200px); /* Ajuster en fonction de la largeur de la sidebar */
-  }
-  
-  /* File upload section */
-  .file-upload-section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre */
-  }
-  
-  .file-upload {
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .upload-icon {
-    font-size: 48px;
-    color: #4229F2; /* Couleur de l'icône */
-  }
-  
-  .upload-link {
-    color: #4229F2;
-    text-decoration: underline; /* Texte souligné */
-  }
-  
-  /* File list section */
-  .file-list-section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre */
-  }
-  
-  .file-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .file-table th, .file-table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .action-btn {
-    padding: 5px 10px;
-    background-color: #4229F2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
+  background-color: #99a7f2; /* Couleur de fond */
+  min-height: 100vh;
+  display: flex;
+  /* gap: 50px; */
+  flex-direction: column;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+  /* position: fixed;
+  top: 0; */
+  /* width: 100%; */
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ajout de l'ombre */
+}
+
+.navbar-logo {
+  height: 40px;
+  /* Légèrement réduit la taille du logo */
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.username {
+  font-size: 16px;
+}
+
+.user-icon {
+  font-size: 24px;
+}
+
+.user-menu {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  right: 20px;
+  top: 50px;
+}
+
+.user-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.user-menu ul li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.user-menu ul li:hover {
+  background-color: #f6b82d;
+}
+
+.entreprise-name {
+  margin: 30px auto 0 auto;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Page layout */
+.page-layout {
+  display: grid;
+  justify-items: center;
+  /* gap: 30px; */
+  grid-template-columns: 15% 85%;
+  padding: 50px;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: white;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  height: 100%;
+  margin-right: 30px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  padding: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sidebar-menu li:hover {
+  background-color: #f6b82d; /* Couleur au survol */
+}
+
+/* Content area */
+.content-area {
+  width: 100%;
+}
+
+/* File upload section */
+.file-upload-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre */
+}
+
+.file-upload {
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-icon {
+  font-size: 48px;
+  color: #4229f2; /* Couleur de l'icône */
+}
+
+.upload-link {
+  color: #4229f2;
+  text-decoration: underline; /* Texte souligné */
+}
+
+/* File list section */
+.file-list-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre */
+}
+
+.file-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.file-table th,
+.file-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.action-btn {
+  padding: 5px 10px;
+  background-color: #4229f2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,96 @@
+.entreprise-list {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dashboard-containt {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  padding: 40px;
+}
+
+.btnn {
+  background: #99a7f2 !important;
+  padding: 5px 10px;
+}
+.home-logo {
+  height: 50px;
+}
+.side-bar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.entreprise-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  border-radius: 10px;
+  width: 400px;
+  padding: 0 20px;
+  margin: 0 30px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.entreprise-card:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  scale: 1.006;
+}
+
+.logo-container {
+  width: 100px;
+  height: 100px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.top-card {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+.name-entreprise {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin: 0;
+  color: black;
+}
+
+.desc-entreprise {
+  font-size: 10px;
+  font-style: italic;
+  margin-top: 10px;
+  margin: 0;
+  color: rgb(42, 42, 42);
+}
+
+.alert-container {
+  display: flex;
+  align-items: center;
+}
+
+.alert {
+  color: blue;
+  margin: 0;
+}

@@ -1,231 +1,254 @@
 /* src/pages/Home.css */
 
 /* Importer la police Lato */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import "bootstrap/dist/css/bootstrap.min.css";
 
-body, * {
-  font-family: 'Lato', sans-serif;
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0 !important;
+}
+
+a {
+  text-decoration: none;
 }
 
 .home-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background-color: #99a7f2; /* Couleur de fond */
-  }
-  
-  .no-scroll {
-    overflow: hidden;
-  }
-  
-  .home-nav {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 1200px;
-    height: 70px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 1000;
-  }
-  
-  .nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .home-logo {
-    width: 120px;
-  }
-  
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #99a7f2; /* Couleur de fond */
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.home-nav {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.dropdown-toggle {
+  color: black !important;
+  background-color: none !important;
+  padding: 0 !important;
+}
+
+.dropdown-toggle:hover {
+  background-color: white !important;
+}
+
+.home-logo {
+  width: 120px;
+}
+
+.home-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.home-menu li {
+  display: flex;
+  align-items: center;
+}
+
+.home-menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+}
+
+.home-menu li a:hover {
+  color: #f6b82d;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.burger-menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+.burger-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1001;
+  padding: 20px;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.burger-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.burger-menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+}
+
+.burger-menu li a:hover {
+  color: #f6b82d;
+}
+
+.burger-social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.burger-social-icons a {
+  color: #99a7f2; /* Couleur des icônes dans le menu burger */
+  font-size: 1.5rem;
+}
+
+.home-hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.home-logo-center {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+.logo-center {
+  width: 180px;
+  margin-bottom: 50px;
+}
+
+.home-buttons {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  z-index: 3;
+}
+
+.btn {
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 1.2rem;
+  transition: background 0.3s, transform 0.6s ease;
+}
+
+.btn-signin {
+  background: #f6b82d;
+}
+
+.btn-signin:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-signup {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn:hover {
+  background: #f6b82d;
+}
+
+/* Responsive CSS: Passer en mode burger pour les écrans de moins de 860px */
+@media (max-width: 860px) {
   .home-menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
+    display: none;
   }
-  
-  .home-menu li {
-    display: flex;
-    align-items: center;
-  }
-  
-  .home-menu li a {
-    text-decoration: none;
-    color: white;
-    font-weight: normal;
-  }
-  
-  .home-menu li a:hover {
-    color: #f6b82d;
-  }
-  
+
   .social-icons {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+    display: none;
   }
-  
-  .social-icons a {
-    color: white;
-    font-size: 1.2rem;
-  }
-  
+
   .burger-menu-icon {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
+    display: block;
   }
-  
+
   .burger-menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1001;
-    padding: 20px;
+    display: block;
   }
-  
-  .burger-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-  
-  .burger-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  
-  .burger-menu li a {
-    text-decoration: none;
-    color: white;
-    font-weight: normal;
-  }
-  
-  .burger-menu li a:hover {
-    color: #f6b82d;
-  }
-  
-  .burger-social-icons {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-    flex-direction: row;
-    justify-content: center;
-  }
-  
-  .burger-social-icons a {
-    color: #99a7f2; /* Couleur des icônes dans le menu burger */
-    font-size: 1.5rem;
-  }
-  
-  .home-hero {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-  }
-  
-  .home-logo-center {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-  }
-  
-  .logo-center {
-    width: 180px;
-    margin-bottom: 50px;
-  }
-  
-  .home-buttons {
-    position: absolute;
-    bottom: 20px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    z-index: 3;
-  }
-  
-  .btn {
-    padding: 15px 30px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: normal;
-    font-size: 1.2rem;
-    transition: background 0.3s, transform 0.6s ease;
-  }
-  
-  .btn-signin {
-    background: #f6b82d;
-  }
-  
-  .btn-signin:hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
-  
-  .btn-signup {
-    background: rgba(255, 255, 255, 0.1);
-  }
-  
-  .btn:hover {
-    background: #f6b82d;
-  }
-  
-  /* Responsive CSS: Passer en mode burger pour les écrans de moins de 860px */
-  @media (max-width: 860px) {
-    .home-menu {
-      display: none;
-    }
-  
-    .social-icons {
-      display: none;
-    }
-  
-    .burger-menu-icon {
-      display: block;
-    }
-  
-    .burger-menu-overlay {
-      display: block;
-    }
-  }
-  
+}

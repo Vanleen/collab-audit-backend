@@ -1,16 +1,16 @@
 // src/pages/Home.js
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FiMenu, FiX } from 'react-icons/fi';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi";
 import {
   FaFacebookF,
   FaLinkedinIn,
   FaInstagram,
   FaTiktok,
   FaYoutube,
-} from 'react-icons/fa';
-import './Home.css';
-import Logo from '../assets/CollabAuditBlanc.svg';
+} from "react-icons/fa";
+import "./Home.css";
+import Logo from "../assets/CollabAuditBlanc.svg";
 
 const Home = () => {
   const [burgerOpen, setBurgerOpen] = useState(false);
@@ -20,7 +20,7 @@ const Home = () => {
   };
 
   return (
-    <div className={`home-container ${burgerOpen ? 'no-scroll' : ''}`}>
+    <div className={`home-container ${burgerOpen ? "no-scroll" : ""}`}>
       <nav className="home-nav">
         <div className="nav-content">
           <img src={Logo} alt="CollabAudit Logo" className="home-logo" />
