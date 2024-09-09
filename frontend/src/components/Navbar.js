@@ -22,7 +22,7 @@ const Navbar = () => {
           <div className="user-info">
             <DropdownButton
               id="dropdown-basic-button"
-              title="Dropdown button"
+              title={user?.username || "Nom de l'utilisateur"}
               className="btn-nav"
             >
               <Dropdown.Item href="#/action-1">Action</Dropdown.Item>

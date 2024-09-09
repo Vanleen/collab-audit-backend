@@ -60,7 +60,7 @@ const CommissaireDashboard = () => {
                   <div class="bot-card">
                     <div class="alert-container">
                       <CircleAlert />
-                      <p className="alert">{entreprise.alert} alerts</p>
+                      <p className="alert">{entreprise.alert.length} alerts</p>
                     </div>
                   </div>
                 </div>

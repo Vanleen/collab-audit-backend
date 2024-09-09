@@ -76,79 +76,23 @@ const EntrepriseDashboard = () => {
             <li>Tableau de bord</li>
 
             <NavLink to={`/dashboard/entreprise/${id}`}>
-              <li style={{ backgroundColor: "orange" }}>Documents</li>
+              <li>Documents</li>
             </NavLink>
 
             <NavLink to={`/dashboard/entreprise/alerts/${id}`}>
-              <li>Alert</li>
+              <li style={{ backgroundColor: "orange" }}>Alert</li>
             </NavLink>
           </ul>
         </div>
 
         {/* Main Content */}
         <div className="content-area">
-          {/* Drag and Drop Zone */}
-          <div className="file-upload-section">
-            <div
-              className="file-upload"
-              onDragOver={handleDragOver}
-              onDrop={handleDrop}
-              onClick={() => fileInputRef.current.click()}
-            >
-              <FontAwesomeIcon
-                icon={faCloudArrowDown}
-                className="upload-icon"
-              />
-              <h2>
-                Déposez vos fichiers ici, ou{" "}
-                <span className="upload-link">cliquez ici</span> pour
-                sélectionner
-              </h2>
-              <input
-                type="file"
-                multiple
-                ref={fileInputRef}
-                style={{ display: "none" }}
-                onChange={handleFileUpload}
-              />
-            </div>
-          </div>
-
-          {/* Files Table */}
-          <div className="file-list-section">
-            <h3>Fichiers téléchargés</h3>
-            <table className="file-table">
-              <thead>
-                <tr>
-                  <th>Nom du document</th>
-                  <th>État</th>
-                  <th>Type</th>
-                  <th>Dépôt par</th>
-                  <th>Date de dépôt</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {files.map((file, index) => (
-                  <tr key={index}>
-                    <td>{file.name}</td>
-                    <td>En cours de traitement</td>
-                    <td>{file.type.split("/")[1]}</td>
-                    <td>{user?.username || "Nom de l'utilisateur"}</td>
-                    <td>{new Date().toLocaleDateString()}</td>
-                    <td>
-                      <button
-                        className="action-btn"
-                        onClick={() => handleFileOpen(file)}
-                      >
-                        Ouvrir
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          {entreprises.map((entreprise) => {
+            if (entreprise.id === parseInt(id)) {
+              return <li key={entreprise.id}>{entreprise.alert}</li>;
+            }
+            return null;
+          })}
         </div>
       </div>
     </div>

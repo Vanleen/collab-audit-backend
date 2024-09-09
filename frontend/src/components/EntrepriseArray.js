@@ -8,7 +8,7 @@ const entreprises = [
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Logo-engie.svg/2445px-Logo-engie.svg.png",
     siteWeb: "https://www.techsolutions.fr",
     nombreEmployes: 250,
-    alert: 3,
+    alert: ["Voir bilan", "Voir compte de résultat", "Voir rapport d'audit"],
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const entreprises = [
     img: "https://images.prismic.io/clublvmh-actionnaires/8a3feaf2-7a93-451c-a90f-462a3f888616_LVMH_Logotype_Simple_N.PNG?auto=compress,format",
     siteWeb: "https://www.techsolutions.fr",
     nombreEmployes: 250,
-    alert: 1,
+    alert: ["Voir bilan", "Voir compte de résultat", "Voir rapport d'audit"],
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const entreprises = [
     img: "https://upload.wikimedia.org/wikipedia/fr/thumb/d/dd/TOTAL_SA_logo.svg/2501px-TOTAL_SA_logo.svg.png",
     siteWeb: "https://www.techsolutions.fr",
     nombreEmployes: 250,
-    alert: 5,
+    alert: ["Voir bilan", "Voir compte de résultat", "Voir rapport d'audit"],
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const entreprises = [
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Logo-engie.svg/2445px-Logo-engie.svg.png",
     siteWeb: "https://www.techsolutions.fr",
     nombreEmployes: 250,
-    alert: 3,
+    alert: ["Voir bilan", "Voir compte de résultat", "Voir rapport d'audit"],
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const entreprises = [
     img: "https://images.prismic.io/clublvmh-actionnaires/8a3feaf2-7a93-451c-a90f-462a3f888616_LVMH_Logotype_Simple_N.PNG?auto=compress,format",
     siteWeb: "https://www.techsolutions.fr",
     nombreEmployes: 250,
-    alert: 1,
+    alert: ["Voir bilan", "Voir compte de résultat", "Voir rapport d'audit"],
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ const entreprises = [
     img: "https://upload.wikimedia.org/wikipedia/fr/thumb/d/dd/TOTAL_SA_logo.svg/2501px-TOTAL_SA_logo.svg.png",
     siteWeb: "https://www.techsolutions.fr",
     nombreEmployes: 250,
-    alert: 5,
+    alert: ["Voir bilan", "Voir compte de résultat", "Voir rapport d'audit"],
   },
 ];
 

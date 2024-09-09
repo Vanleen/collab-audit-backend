@@ -7,6 +7,7 @@ import SignUp from "./pages/SignUp";
 import CommissaireDashboard from "./pages/CommissaireDashboard";
 import CollaborateurDashboard from "./pages/CollaborateurDashboard";
 import EntrepriseDashboard from "./pages/EntrepriseDashboard";
+import Alerts from "./pages/Alerts";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           path="/dashboard/entreprise/:id"
           element={<EntrepriseDashboard />}
         />
+        <Route path="/dashboard/entreprise/alerts/:id" element={<Alerts />} />
       </Routes>
     </Router>
   );
